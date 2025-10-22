@@ -194,19 +194,18 @@ postprepare
 }
 ```
 
-ただし、実際に npm install を実行した際に起動するのは、上記のうち
-preinstall, install, postinstall の3つのみです。
+ただし、実際に `npm install` を実行した際に起動するのは、上記のうち
+`preinstall`, `install`, `postinstall` の3つのみです。
 
 npm公式ドキュメント によると、`prepublish` はすでに deprecated（非推奨） となっています。
 
-また、preprepare および postprepare については、ドキュメント内に記述が見当たりませんでした。
+また、`preprepare` および `postprepare` については、ドキュメント内に記述が見当たりませんでした。
 
-prepare については、以下のように publish および pack のタイミングで実行されると説明されています。
+`prepare` については、以下のように `publish` および `pack` のタイミングで実行されると説明されています。
 
 > Runs any time before the package is packed, i.e. during npm publish and npm pack.
 
-したがって、今回のように「他者が npm install で依存としてインストールする」ケースでは、
-prepare / preprepare / postprepare は実行されません。
+したがって、今回のように「他者が npm install で依存としてインストールする」ケースでは、`prepare` / `preprepare` / `postprepare` は実行されません。
 
 
 
