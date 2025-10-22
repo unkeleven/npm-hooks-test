@@ -134,15 +134,23 @@ npm install ../my-hooks-pkg/my-hooks-pkg-0.1.0.tgz
 - `install`
 - `postinstall`
 
-これらのイベントが走ると、 `hooks.log` に以下のようなログが追記されます。
+これらのイベントが走ると、`node_modules`内の `hooks.log` にたとえば以下のようなログが追記されます。
 
 ```
-[2025-10-21T05:20:43.812Z] preinstall in /Users/hoge/develop/npm-hooks-lab/test-app
-[2025-10-21T05:20:43.917Z] install in /Users/hoge/develop/npm-hooks-lab/test-app
-[2025-10-21T05:20:44.001Z] postinstall in /Users/hoge/develop/npm-hooks-lab/test-app
+[2025-10-22T06:16:39.142Z] preinstall in /Users/hoge/dev/npm-hooks-test/test-app/node_modules/my-hooks-pkg
+[2025-10-22T06:16:39.175Z] install in /Users/hoge/dev/npm-hooks-test/test-app/node_modules/my-hooks-pkg
+[2025-10-22T06:16:39.207Z] postinstall in /Users/hoge/dev/npm-hooks-test/test-app/node_modules/my-hooks-pkg
 ```
 
-`package.json`には、`preinstall`, `install`, `postinstall`以外のフックスクリプトも記載していますが、それについては、下部[package.json内でのLife Cycle Scriptsの記述についての補足](#lifecycle-scripts-notes)を参照ください。
+補足ですが、これらのログの前に、以下のような記述がありますが、これは `my-hooks-pkg` において`npm pack`した時に実行されたものです。
+
+```
+[2025-10-22T06:16:28.961Z] prepare in /Users/hoge/dev/npm-hooks-test/my-hooks-pkg
+```
+ちなみにですが、※ npm 6 系では `prepublish` も同様に実行される場合があります。
+
+
+なお、`package.json`には、`preinstall`, `install`, `postinstall`以外のフックスクリプトも記載していますが、それについては、下部 [package.json内でのLife Cycle Scriptsの記述についての補足](#lifecycle-scripts-notes) を参照ください。
 
 
 ### 3. --ignore-scripts で挙動を比較
