@@ -1,0 +1,20 @@
+{
+  "name": "my-hooks-pkg",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "scripts/log.js",
+    "hooks.log"
+  ],
+  "scripts": {
+    "preinstall": "node scripts/log.js preinstall",
+    "install": "node scripts/log.js install",
+    "postinstall": "node scripts/log.js postinstall",
+    "prepublish": "node scripts/log.js prepublish",
+    "preprepare": "node scripts/log.js preprepare",
+    "prepare": "node scripts/log.js prepare",
+    "postprepare": "node scripts/log.js postprepare"
+  }
+}
