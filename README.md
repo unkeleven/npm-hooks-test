@@ -142,7 +142,7 @@ npm install ../my-hooks-pkg/my-hooks-pkg-0.1.0.tgz
 [2025-10-21T05:20:44.001Z] postinstall in /Users/hoge/develop/npm-hooks-lab/test-app
 ```
 
-`package.json`には、`preinstall`, `install`, `postinstall`以外のフックスクリプトも記載していますが、それについては、下部[package.json内でのLife Cycle Scriptsの記述についての補足](#package.json内でのLife Cycle Scriptsの記述についての補足)を参照ください。
+`package.json`には、`preinstall`, `install`, `postinstall`以外のフックスクリプトも記載していますが、それについては、下部[package.json内でのLife Cycle Scriptsの記述についての補足](#lifecycle-scripts-notes)を参照ください。
 
 
 ### 3. --ignore-scripts で挙動を比較
@@ -161,6 +161,7 @@ npm install --ignore-scripts ../my-hooks-pkg/my-hooks-pkg-0.1.0.tgz
 
 
 
+<a id="lifecycle-scripts-notes"></a>
 ## package.json内でのLife Cycle Scriptsの記述についての補足
 
 [公式ドキュメント](https://docs.npmjs.com/cli/v8/using-npm/scripts)には、以下のような記述があります。
